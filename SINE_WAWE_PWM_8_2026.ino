@@ -1,11 +1,26 @@
+Copyright (C) 08.2026 Nikolay Bastiyanov
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://gnu.org>.
+
+
 //SinWave PWM modulator for inverter 50Hz~60Hz
-//N.Bastiayanov 08.2026
 //ATtiny85
 //MCU clock PLL 16MHz
 //PWM ~8kHz 
 //outputs PB0,PB1
-//voltage feedback A3 PB3
-//freqency A2 PB4
+//voltage feedback A3 PB3 
+//freqency set A2 PB4
 //fault, active LOW PB2
 
 #define wdt_reset() __asm__ __volatile__ ("wdr")
