@@ -2,7 +2,7 @@
 //N.Bastiayanov 08.2026
 //ATtiny85
 //MCU clock PLL 16MHz
-//PWM ~8.1kHz 
+//PWM ~8kHz 
 //outputs PB0,PB1
 //voltage feedback A3 PB3
 //freqency A2 PB4
@@ -15,7 +15,7 @@ unsigned int freq = 400; //initial freq ~50Hz
 
 void setup() {
   CLKPR = 0x80; CLKPR = 0;  // CPU clock prescaler 0
-  OSCCAL =B11111111;        // inrease MCU clock to max
+  //OSCCAL =B11111111;        // inrease MCU clock to max
   DDRB = B00000011;         // PB0,PB1 set to output
   GTCCR = 0;                // timer0 settings
   TCCR0A = B10100001;       // non invert, phase correct PWM, 
