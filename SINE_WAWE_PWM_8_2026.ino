@@ -14,14 +14,14 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://gnu.org>.
 
 
-//SinWave PWM modulator for inverter 50Hz~60Hz
+//SineWave PWM modulator for inverter 50Hz~60Hz
 //ATtiny85
 //MCU clock PLL 16MHz
 //PWM ~8kHz 
 //outputs PB0,PB1
 //voltage feedback A3 PB3 
 //freqency set A2 PB4
-//fault, active LOW PB2
+//fault input, active LOW PB2
 
 #define wdt_reset() __asm__ __volatile__ ("wdr")
 
@@ -68,7 +68,7 @@ void loop() {
                   //the time step depend by "customDelay(freq)" of the end of each cycle
   for (;;) {
     
-//half period 1=============================
+//=============================
     wdt_reset();
     a = analogRead(A3);   //voltage feedback calculations
     if (a < 511) {
@@ -112,7 +112,7 @@ void loop() {
       }
       customDelay(freq); // time step for X axis
     }
-//half period 2=============================
+//=============================
     wdt_reset();
     a = analogRead(A3);
     if (a < 511) {
